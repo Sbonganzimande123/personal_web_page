@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="//unpkg.com/alpinejs" defer></script>
+
+
+</head>
+<body>
+    <div class="container" x-data="{ showCart: false }">
+
+<h1>Perfect Pizza</h1>
+<h2>Pizza Orders</h2>
+
+<style>
+    .pizza-1 {
+        height: 100%;
+    }
+    </style>
+
+<div class="pizza-1">
+    <div class="cart">
+    <div x-data="{open: false}">
+        <button x-on:click="open = !open" class="bg-slate-700 text-white px-4 py-2 rounded-xl">Show cart</button>
+        <div x-show="open">
+            
+            <h3>Shopping Cart</h3>
+
+
+            <p>Small</p> <p class="the-buts" style="padding: 0px;"><button onclick="PricePlusOne()" >+</button><button onclick="PriceMinusOne()">-</button></p> <p  id="price1">46.00</p>
+            <p>Medium</p> <p class="the-buts"><button onclick="PricePlusTwo(78.99)" >+</button><button onclick="PriceMinusTwo(78.99)" >-</button></p> <p id="price2">79.00</p>
+            <p>Large</p> <p class="the-buts"><button onclick="PricePlusThree()" >+</button><button onclick="PriceMinusThree()">-</button></p> <p id="price3">124.00</p>
+            <p>Total Cost=</p> <p>_</p><p>_</p> <p></p>
+        
+            <div x-data="{open: false}">
+                <button x-on:click="open = !open"
+                class="bg-slate-700 text-white px-4 py-2 rounded-xl">Pay</button>
+                <div x-show="open">
+                    <p class="bg-gray-200 p-4 my-6 rounded"></p>
+                </div>
+            </div>
+           
+            <div x-effect="console.log(open)"></div>
+                    <input
+                    type="text"
+                    class="border p-2 w-full mb-2 mt-6" 
+					id="buying"
+					placeholder="Payment amount"
+                    />
+            </div>
+                </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+<div class="pizzas">
+    <div class="pizza">
+    <img class = "fix_image" src="https://images.indulgexpress.com/uploads/user/imagelibrary/2018/11/2/original/285A5419.JPG?w=400&dpr=2.6" alt="">
+    <h2>Large Pizza</h2>
+    <h3>R124.00</h3>
+    <span>Large margaritha pizza with 3 toppins max, 3 meat toppings max and 3 or less other toppings.</span> 
+    <button onclick="amountone('R 124.00')">Buy</button>
+</div>
+
+<div class="pizza1">
+    <img class ="fix_image2" src="https://img.onmanorama.com/content/dam/mm/en/food/features/images/2021/10/17/pizza.jpg" alt="">
+    <h2>Medium Pizza</h2>
+    <h3>R79.00</h3>
+    <box>Medium margaritha pizza with 3 toppings max. 2 or less meat toppings and 3 or less other toppings.</box>
+    <button onclick="amountone('R 79.00')">Buy</button>
+    </div>
+
+<div class="cart-box">
+    <div class="cart" x-show="showCart">
+    </div>
+</div>
+
+<div class="pizza2">
+    <img class = "fix_image3" src="https://www.monsieur-cuisine.com/fileadmin/_processed_/8/4/csm_23148_Rezeptfoto_02_d74eed40d6.jpg" alt="">
+    <h2>Small Pizza</h2>
+    <h3>R46.00</h3>
+    <man>Small margaritha pizza with 3 toppings maximum. 1 meat topping maximum. 3 or less other toppings.</man> 
+    <button onclick="amountone('R 46.00')">Buy</button>
+</div>
+
+</div>
+
+<div class="footer">
+    <br>Contact us at: (021) 541-1000 twitter <br>
+        /fb <br>
+        /insta <br>
+        @perfectpizza 
+    
+
+    <div class="side-bar">
+            <br>Pizza Plaza<br>Dough Road<br>Base Town 
+    </div>
+    </div>
+
+<script type='text/javascript'>
+
+    function amountone(x){
+
+		document.getElementById("buying").value = x;
+		
+    }
+
+    //Product small add
+    //=================
+	var total1 = 46.00;
+	function PricePlusOne(){
+		
+		 
+		document.getElementById("price1").innerText = total1 += 46.00;
+	
+	}
+
+    //Product small minus
+    //=================
+	function PriceMinusOne(){
+		
+		 
+		document.getElementById("price1").innerText = total1 -= 46.00;
+	
+	}
+	
+    //Product medium add
+    //=================
+	var total2 = 79.00;
+	function PricePlusTwo(){
+		
+		 
+		document.getElementById("price2").innerText = total2 += 79.00;
+	
+	}
+
+    //Product medium minus
+    //=================
+	function PriceMinusTwo(){
+		
+		 
+		document.getElementById("price2").innerText = total2 -= 79.00;
+	
+	}
+	
+    //Product large add
+    //=================	
+	var total3 = 124.00;
+	function PricePlusThree(){
+		
+		 
+		document.getElementById("price3").innerText = total3 += 124.00;
+	
+	}
+
+    //Product large minus
+    //===================
+	function PriceMinusThree(){
+		
+		 
+		document.getElementById("price3").innerText = total3 -= 124.00;
+	
+	}
+	
+</script>
+
+</body>
+</html>

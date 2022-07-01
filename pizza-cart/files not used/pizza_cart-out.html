@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="//unpkg.com/alpinejs" defer></script>
+
+
+</head>
+<body>
+    <div class="container" x-data="{ showCart: false }">
+
+<h1>Perfect Pizza</h1>
+<h2>Pizza Orders</h2>
+
+<style>
+    .pizza-1 {
+        height: 100%;
+    }
+    </style>
+
+<div class="pizza-1">
+    <div class="cart">
+    <div x-data="{open: false}">
+        <button x-on:click="open = !open" class="bg-slate-700 text-white px-4 py-2 rounded-xl">Show cart</button>
+        <div x-show="open">
+            
+            <h3 style="text-align:left;">Shopping Cart</h3>
+
+
+            <p class="the-buts">Small</p> <p class="the-buts" style="padding: 0px;"><button>+</button><button>-</button></p> <p class="the-buts">45.99</p> 
+            <p class="the-buts">Medium</p> <p class="the-buts"><button>+</button><button>-</button></p> <p class="the-buts">78.99</p>
+            <p class="the-buts">Large</p> <p class="the-buts"><button>+</button><button>-</button></p> <p class="the-buts">124.00</p>
+            <p class="the-buts">Total Cost=</p> <p class="the-buts">_</p><p class="the-buts">_</p> <p class="the-buts"></p>
+            
+           <br/>
+           <br/>
+           <br/>
+            <div x-data="{open: false}">
+                <button x-on:click="open = !open"
+                class="bg-slate-700 text-white px-4 py-2 rounded-xl">Pay</button>
+                <div x-show="open">
+                    <p class="bg-gray-200 p-4 my-6 rounded"></p>
+        
+            <div x-effect="console.log(open)"></div>
+                    <input
+                    type="text"
+                    class="border p-2 w-full mb-2 mt-6" id="buying" placeholder="Payment amount"
+                    />
+            </div>
+                </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+</button>  
+
+
+
+
+
+<div class="pizzas">
+    <div class="pizza">
+    <img class = "fix_image" src="https://images.indulgexpress.com/uploads/user/imagelibrary/2018/11/2/original/285A5419.JPG?w=400&dpr=2.6" alt="">
+    <h2>Large Pizza</h2>
+    <h3>R124.00</h3>
+    <span>Large margaritha pizza with 3 toppins max, 3 meat toppings max and 3 or less other toppings.</span> 
+    <button onclick="the_amount_one()">Buy</button>
+</div>
+
+<div class="pizza1">
+    <img class ="fix_image2" src="https://img.onmanorama.com/content/dam/mm/en/food/features/images/2021/10/17/pizza.jpg" alt="">
+    <h2>Medium Pizza</h2>
+    <h3>R78.99</h3>
+    <box>Medium margaritha pizza with 3 toppings max. 2 or less meat toppings and 3 or less other toppings.</box>
+    <button onclick="the_amount_two()">Buy</button>
+    </div>
+
+<div class="cart-box">
+    <div class="cart" x-show="showCart">
+    </div>
+</div>
+
+<div class="pizza2">
+    <img class = "fix_image3" src="https://www.monsieur-cuisine.com/fileadmin/_processed_/8/4/csm_23148_Rezeptfoto_02_d74eed40d6.jpg" alt="">
+    <h2>Small Pizza</h2>
+    <h3>R45.99</h3>
+    <man>Small margaritha pizza with 3 toppings maximum. 1 meat topping maximum. 3 or less other toppings.</man> 
+    <button onclick="the_amount_three()">Buy</button>
+</div>
+
+</div>
+
+<div class="footer">
+    <br>Contact us at: (021) 541-1000 twitter <br>
+        /fb <br>
+        /insta <br>
+        @perfectpizza 
+    
+
+    <div class="side-bar">
+            <br>Pizza Plaza<br>Dough Road<br>Base Town 
+    </div>
+    </div>
+
+<script>
+    function the_amount_one(){
+        document.getElementById("buying").innerHTML = "R 124.00";
+    }
+</script>
+
+</body>
+</html>
